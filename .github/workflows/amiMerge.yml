@@ -1,13 +1,13 @@
 name: Build an AMI using Packer
 
 on:
-  pull_request:
+  push:
     branches:
       - 'main'
   workflow_dispatch:
   
 jobs:
-  validate:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -16,7 +16,7 @@ jobs:
       - name: Packer AMI Build
         uses: hashicorp/packer-github-actions@master
         with:
-          command: validate
+          command: build
           arguments: -syntax-only
           target: ami.json
         env:
