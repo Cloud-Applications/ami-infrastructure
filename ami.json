@@ -34,7 +34,7 @@
         {
             "type": "shell",
             "environment_vars": [
-                "FOO=test"
+                "FOO=test2"
             ],
             "inline": [
                 "sudo apt-get update",
