@@ -15,7 +15,7 @@
             "instance_type": "{{user `instance_type`}}",
             "subnet_id": "{{user `subnet_id`}}",
             "source_ami": "{{user `source_ami`}}",
-            // "ami_users":"",
+            "ami_users":"",
             "skip_region_validation": true,
             "ssh_username": "ubuntu",
             "ami_name": "ami_test_{{timestamp}}",
