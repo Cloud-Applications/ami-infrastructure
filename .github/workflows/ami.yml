@@ -1,10 +1,9 @@
-name: Build an AMI using Packer
+name: Build an AMI using Packer for Pull Request
 
 on:
   pull_request:
     branches:
       - 'main'
-  workflow_dispatch:
   
 jobs:
   validate:
