@@ -1,10 +1,11 @@
 {
     "variables": {
-        "access_key": "{{env `aws_access_key`}}",
-        "secret_key": "{{env `aws_secret_key`}}",
-        "ami_region": "${env `ami_region`}",
-        "source_ami": "${env `source_ami`}",
-        "instance_type": "${env `instance_type`}",
+        "access_key": "",
+        "secret_key": "",
+        "ami_region": "",
+        "ami_users": "{{env `AMI_USERS`}}",
+        "source_ami": "${env `SOURCE_AMI`}",
+        "instance_type": "t2.micro",
         "name": "ami-test-{{timestamp}}"
     },
     "builders": [
@@ -16,7 +17,7 @@
             "instance_type": "{{user `instance_type`}}",
             "subnet_id": "{{user `subnet_id`}}",
             "source_ami": "{{user `source_ami`}}",
-            "ami_users":"",
+            "ami_users": "{{user `ami_users`}}",
             "skip_region_validation": true,
             "ssh_username": "ubuntu",
             "ami_name": "ami_test_{{timestamp}}",
