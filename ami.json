@@ -39,11 +39,13 @@
                 "FOO=final test 3"
             ],
             "inline": [
+                "sleep 30",
                 "sudo apt-get update",
+                "echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections",
+                "sudo apt install unzip",
                 "curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -",
                 "sudo apt install nodejs",
                 "node --version",
-                "sudo apt-get install -y zip unzip",
                 "sudo apt install ruby-full",
                 "sudo apt install wget",
                 "cd /home/ubuntu",
