@@ -42,7 +42,15 @@
                 "sudo apt-get update",
                 "curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -",
                 "sudo apt install nodejs",
-                "node --version"
+                "node --version",
+                "sudo apt-get install -y zip unzip",
+                "sudo apt install ruby-full",
+                "sudo apt install wget",
+                "cd /home/ubuntu",
+                "wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install",
+                "chmod +x ./install",
+                "sudo ./install auto > /tmp/logfile",
+                "sudo service codedeploy-agent status"
             ]
         }
     ]
