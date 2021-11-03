@@ -1,14 +1,12 @@
 name: Build an AMI using Packer for Merge Request
 
 on:
-  pull_request:
+  push:
     branches:
       - 'main'
-    types: [ closed ]
   
 jobs:
-  build:
-    if: github.event.pull_request.merged == true
+  packer-ami-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -17,12 +15,11 @@ jobs:
       - name: Packer AMI Build
         uses: hashicorp/packer-github-actions@master
         with:
-          command: build
-          target: ami.json
+          args: build ami.json
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-          # AMI_USERS: ${{ secrets.AMI_USERS }}
+          AMI_USERS: ${{ secrets.AMI_USERS }}
           SUBNET_ID: ${{ secrets.INSTANCE_TYPE }}
           SOURCE_AMI: ${{ secrets.SOURCE_AMI }}
