@@ -4,7 +4,7 @@
         "secret_key": "",
         "ami_region": "",
         "ami_users": "{{env `AMI_USERS`}}",
-        "source_ami": "${env `SOURCE_AMI`}",
+        "source_ami": "{{env `SOURCE_AMI`}}",
         "instance_type": "t2.micro",
         "name": "ami-test-{{timestamp}}"
     },
