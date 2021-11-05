@@ -36,7 +36,7 @@
         {
             "type": "shell",
             "environment_vars": [
-                "FOO=final test 3"
+                "FOO=final test 5"
             ],
             "inline": [
                 "sleep 30",
