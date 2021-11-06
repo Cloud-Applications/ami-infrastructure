@@ -1,8 +1,8 @@
 {
     "variables": {
-        "access_key": "",
-        "secret_key": "",
-        "ami_region": "",
+        "access_key": "{{env `AWS_ACCESS_KEY`}}",
+        "secret_key": "{{env `AWS_SECRET_KEY`}}",
+        "ami_region": "{{env `AWS_REGION`}}",
         "ami_users": "{{env `AMI_USERS`}}",
         "source_ami": "{{env `SOURCE_AMI`}}",
         "instance_type": "t2.micro",
